@@ -1,0 +1,5 @@
+date,url,strategy,score,lcp_ms,tbt_ms,cls,ttfb_ms
+"2026-10-17T05:12:37.121Z","https://example.com/","mobile",100,915,0,0,19
+"2026-10-17T05:12:58.238Z","https://ninjatrader.com/","mobile",25,22437,4708,0,17
+"2026-10-17T05:14:24.909Z","https://example.com/","desktop",100,253,0,0,17
+"2026-10-17T05:14:35.385Z","https://ninjatrader.com/","desktop",78,1428,377,0.035,15
