@@ -1,0 +1,10 @@
+{
+  "ci": {
+    "collect": {
+      "url": ["https://example.com/", "https://example.com/pricing"],
+      "numberOfRuns": 3,
+      "settings": { "chromeFlags": "--no-sandbox" }
+    },
+    "upload": { "target": "filesystem", "outputDir": "./lhci-mobile" }
+  }
+}
