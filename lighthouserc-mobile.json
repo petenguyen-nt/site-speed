@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "url": ["https://ninjatrader.com", "https://interactivebrokers.com"],
+      "url": ["https://ninjatrader.com", "https://interactivebrokers.com", "https://tradestation.com", "https://tradingview.com", "https://robinhood.com"],
       "numberOfRuns": 3,
       "settings": { "chromeFlags": "--no-sandbox" }
     },
