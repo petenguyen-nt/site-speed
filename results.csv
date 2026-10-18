@@ -1,9 +1,1 @@
 date,url,strategy,score,lcp_ms,tbt_ms,cls,ttfb_ms
-"2026-10-17T05:12:37.121Z","https://example.com/","mobile",100,915,0,0,19
-"2026-10-17T05:12:58.238Z","https://ninjatrader.com/","mobile",25,22437,4708,0,17
-"2026-10-17T05:14:24.909Z","https://example.com/","desktop",100,253,0,0,17
-"2026-10-17T05:14:35.385Z","https://ninjatrader.com/","desktop",78,1428,377,0.035,15
-"2026-10-17T05:37:24.072Z","https://ninjatrader.com/","mobile",35,16470,2650,0.065,14
-"2026-10-17T05:38:55.685Z","https://www.interactivebrokers.com/","mobile",46,7021,760,0.097,162
-"2026-10-17T05:39:43.761Z","https://ninjatrader.com/","desktop",90,1484,153,0.035,21
-"2026-10-17T05:40:54.456Z","https://www.interactivebrokers.com/","desktop",83,2374,1,0.004,237
