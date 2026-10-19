@@ -1,1 +1,11 @@
 date,url,strategy,score,lcp_ms,tbt_ms,cls,ttfb_ms
+"2026-10-19T17:21:50.725Z","https://ninjatrader.com/","mobile",35,17914,2173,0.065,20
+"2026-10-19T17:22:15.384Z","https://www.interactivebrokers.com/","mobile",54,7934,491,0.059,339
+"2026-10-19T17:23:52.172Z","https://www.tradestation.com/","mobile",48,16704,842,0,14
+"2026-10-19T17:25:12.608Z","https://www.tradingview.com/","mobile",28,16761,2955,0.003,15
+"2026-10-19T17:26:00.958Z","https://robinhood.com/us/en/","mobile",41,24747,1151,0.001,12
+"2026-10-19T17:27:19.671Z","https://ninjatrader.com/","desktop",94,1467,62,0.035,38
+"2026-10-19T17:28:21.713Z","https://www.interactivebrokers.com/","desktop",83,2406,0,0.001,272
+"2026-10-19T17:28:43.751Z","https://www.tradestation.com/","desktop",78,3728,76,0,16
+"2026-10-19T17:30:11.424Z","https://www.tradingview.com/","desktop",59,2942,347,0.004,17
+"2026-10-19T17:31:42.863Z","https://robinhood.com/us/en/","desktop",65,5503,161,0.001,10
