@@ -1,25 +1,6 @@
 {
   "ci": {
     "collect": {
-      "url": [
-        "https://ninjatrader.com",
-        "https://interactivebrokers.com",
-        "https://tradingview.com",
-        "https://schwab.com",
-        "https://tradestation.com",
-        "https://trendspider.com",
-        "https://sierrachart.com",
-        "https://optimusfutures.com",
-        "https://webull.com",
-        "https://ampfutures.com",
-        "https://quantconnect.com",
-        "https://alpaca.markets",
-        "https://fidelity.com",
-        "https://tastytrade.com",
-        "https://rithmic.com",
-        "https://etrade.com",
-        "https://robinhood.com"
-      ],
       "numberOfRuns": 3,
       "settings": { "chromeFlags": "--no-sandbox" }
     },
