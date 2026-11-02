@@ -1,8 +1,15 @@
-name: daily-lighthouse
+name: lighthouse
 on:
   schedule:
-    - cron: '17 11 * * 1'
+    - cron: '17 11 * * 1'   # Monday: homepages
+    - cron: '17 11 * * 2'   # Tuesday: all other pages
   workflow_dispatch:
+    inputs:
+      list:
+        description: Which URL list to run
+        type: choice
+        options: [homepages, pages]
+        default: homepages
 permissions:
   contents: write
 concurrency:
@@ -11,18 +18,29 @@ concurrency:
 jobs:
   lighthouse:
     runs-on: ubuntu-24.04
-    timeout-minutes: 150
+    timeout-minutes: 240
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      - name: Pick URL list
+        run: |
+          case "${{ github.event.schedule }}" in
+            "17 11 * * 1") LIST=homepages ;;
+            "17 11 * * 2") LIST=pages ;;
+            *) LIST="${{ inputs.list }}" ;;
+          esac
+          echo "LIST=$LIST" >> "$GITHUB_ENV"
+          echo "Running urls-$LIST.txt"
+
       - name: Run Lighthouse (one URL at a time, tolerate failures)
         run: |
+          mapfile -t URLS < <(tr -d '\r' < "urls-$LIST.txt" | grep -v '^[[:space:]]*$')
           for s in mobile desktop; do
             rm -rf .lighthouseci
-            for url in $(jq -r '.ci.collect.url[]' lighthouserc-$s.json); do
+            for url in "${URLS[@]}"; do
               npx -y @lhci/cli@0.14.x collect --config=lighthouserc-$s.json --url="$url" --additive \
                 || echo "::warning::Lighthouse failed for $url ($s)"
             done
@@ -51,7 +69,7 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: lighthouse-reports
+          name: lighthouse-reports-${{ env.LIST }}
           retention-days: 7
           if-no-files-found: ignore
           path: |
@@ -63,6 +81,6 @@ jobs:
           git config user.name github-actions
           git config user.email actions@github.com
           git add results.csv
-          git commit -m "daily lighthouse results" || exit 0
+          git commit -m "lighthouse results ($LIST)" || exit 0
           git pull --rebase origin main
           git push origin HEAD:main
